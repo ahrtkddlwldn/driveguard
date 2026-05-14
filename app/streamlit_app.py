@@ -3,7 +3,7 @@ import requests
 import plotly.graph_objects as go
 import pandas as pd
 
-API_URL = "http://localhost:8000/predict"
+API_URL = "https://driveguard-mq2z.onrender.com/predict"
 
 # ── 페이지 설정 ───────────────────────────────────────────────────────────────
 st.set_page_config(
