@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(py *)",
+      "PowerShell(& \"C:\\\\Users\\\\aj510\\\\driveguard\\\\venv\\\\Scripts\\\\python.exe\" -m pip install pandas numpy scikit-learn xgboost shap fastapi uvicorn streamlit joblib matplotlib seaborn requests 2>&1 | Select-Object -Last 20)",
+      "PowerShell(& \"C:\\\\Users\\\\aj510\\\\driveguard\\\\venv\\\\Scripts\\\\python.exe\" -c \"import pandas as pd; df = pd.read_csv\\('C:/Users/aj510/driveguard/data/US_Accidents_March23.csv', nrows=3\\); print\\(df.columns.tolist\\(\\)\\); print\\(df.dtypes\\)\")",
+      "PowerShell(Get-Content *)",
+      "PowerShell(& \"C:\\\\Users\\\\aj510\\\\driveguard\\\\venv\\\\Scripts\\\\python.exe\" -c \"import pandas as pd; df = pd.read_csv\\('data/processed.csv', nrows=3\\); print\\(df.columns.tolist\\(\\)\\); print\\(df.dtypes\\)\")",
+      "PowerShell(Start-Sleep -Seconds 5; Invoke-RestMethod -Uri \"http://localhost:8000/health\" -Method Get | ConvertTo-Json)",
+      "PowerShell(Invoke-RestMethod -Uri \"http://localhost:8000/health\" -ErrorAction SilentlyContinue | ConvertTo-Json)",
+      "PowerShell(Start-Sleep -Seconds 4; Invoke-WebRequest -Uri \"http://localhost:8501\" -UseBasicParsing -TimeoutSec 5 | Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(Start-Sleep -Seconds 6; Invoke-WebRequest -Uri \"http://localhost:8501\" -UseBasicParsing -TimeoutSec 8 | Select-Object StatusCode, StatusDescription)",
+      "PowerShell(Start-Sleep -Seconds 7; Invoke-WebRequest -Uri \"http://localhost:8501\" -UseBasicParsing -TimeoutSec 8 | Select-Object StatusCode)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:8501\" -UseBasicParsing -TimeoutSec 5 | Select-Object StatusCode)",
+      "PowerShell(\\(Invoke-WebRequest -Uri \"http://localhost:8501\" -UseBasicParsing\\).StatusCode)",
+      "PowerShell(Get-NetTCPConnection *)",
+      "PowerShell(& \"C:\\\\Users\\\\aj510\\\\driveguard\\\\venv\\\\Scripts\\\\python.exe\" -c \"import pandas as pd; df = pd.read_csv\\('data/processed.csv', usecols=['Distance\\(mi\\)']\\); print\\(f'mean={df[chr\\(68\\)+chr\\(105\\)+chr\\(115\\)+chr\\(116\\)+chr\\(97\\)+chr\\(110\\)+chr\\(99\\)+chr\\(101\\)+chr\\(40\\)+chr\\(109\\)+chr\\(105\\)+chr\\(41\\)].mean\\(\\):.6f}'\\)\")",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Invoke-RestMethod -Uri \"http://localhost:8000/health\" | ConvertTo-Json)"
+    ]
+  }
+}
