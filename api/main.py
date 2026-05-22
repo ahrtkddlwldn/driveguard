@@ -64,10 +64,10 @@ SEVERITY_LABEL = {
 }
 
 FEATURE_KO = {
-    "Start_Lat":             "출발지 위도",
-    "Start_Lng":             "출발지 경도",
-    "End_Lat":               "도착지 위도",
-    "End_Lng":               "도착지 경도",
+    "Start_Lat":             "사고 구간 시작 위도",
+    "Start_Lng":             "사고 구간 시작 경도",
+    "End_Lat":               "사고 구간 종료 위도",
+    "End_Lng":               "사고 구간 종료 경도",
     "Temperature(F)":        "기온",
     "Wind_Chill(F)":         "체감온도",
     "Humidity(%)":           "습도",
@@ -98,10 +98,10 @@ FEATURE_KO = {
 # ── 입력 스키마 ───────────────────────────────────────────────────────────────
 class PredictRequest(BaseModel):
     # 좌표 (원본 위경도 값)
-    Start_Lat: float = Field(..., ge=-90,  le=90,  description="출발지 위도")
-    Start_Lng: float = Field(..., ge=-180, le=180, description="출발지 경도")
-    End_Lat:   float = Field(..., ge=-90,  le=90,  description="도착지 위도")
-    End_Lng:   float = Field(..., ge=-180, le=180, description="도착지 경도")
+    Start_Lat: float = Field(..., ge=-90,  le=90,  description="사고 구간 시작 위도")
+    Start_Lng: float = Field(..., ge=-180, le=180, description="사고 구간 시작 경도")
+    End_Lat:   float = Field(..., ge=-90,  le=90,  description="사고 구간 종료 위도")
+    End_Lng:   float = Field(..., ge=-180, le=180, description="사고 구간 종료 경도")
 
     # 수치형 — Min-Max 스케일된 값 (0.0 ~ 1.0)
     Temperature_F: float = Field(0.5, ge=0.0, le=1.0, description="기온 (스케일값 0~1)", alias="Temperature(F)")
